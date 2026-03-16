@@ -62,21 +62,21 @@ cd 你的前端项目名
 ### 3. 安装依赖
 
 ```bash
-pnpm i
+npm i
 
 ```
 
 ### 4. 本地启动开发环境
 
 ```bash
-pnpm dev
+npm dev
 
 ```
 
 ### 5. 生产环境打包编译
 
 ```bash
-pnpm build
+npm build
 
 ```
 

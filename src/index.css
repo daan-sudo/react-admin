@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ========== CSS 变量：白天/黑夜主题 ========== */
+:root {
+  --c-bg: #fff;
+  --c-card: #ffffff;
+  --c-text: #303133;
+  --c-sub: #606266;
+  --c-primary: #21aa54;
+  --c-border: #e4e7ed;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] {
+  --c-bg: #1c1c1c;
+  --c-card: #141414;
+  --c-text: #e1e3e8;
+  --c-sub: #a3a6ad;
+  --c-primary: #337ecc;
+  --c-border: #3a3a3c;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
+}
+
+/* ========== 全局 Reset ========== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  transition: var(--transition);
+}
+
+html.grayscale {
+  filter: grayscale(100%);
+}
+
+/* ========== 路由切换过渡动画 ========== */
+.fade-slide-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.fade-slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+.fade-slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-slide-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+}
+
+/* ========== Ant Design 自定义滚动条 ========== */
+.ant-table-body::-webkit-scrollbar,
+.ant-table-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.ant-table-body::-webkit-scrollbar-track,
+.ant-table-content::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+.ant-table-body::-webkit-scrollbar-thumb,
+.ant-table-content::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s;
+}
+.ant-table-body::-webkit-scrollbar-thumb:hover,
+.ant-table-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144, 147, 153, 0.5);
+}
+
+/* ========== 通用工具样式 ========== */
+.bg-app-bg {
+  background-color: var(--c-bg);
+}
+.text-primary-text {
+  color: var(--c-text);
+}
